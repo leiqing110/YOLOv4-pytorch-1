@@ -8,7 +8,7 @@ DATA_PATH = osp.join(PROJECT_PATH2)
 
 
 MODEL_TYPE = {
-    "TYPE": "Mobilenet-YOLOv4"
+    "TYPE": "YOLOv4"
 }  # YOLO type:YOLOv4, Mobilenet-YOLOv4 or Mobilenetv3-YOLOv4
 
 CONV_TYPE = {"TYPE": "DO_CONV"}  # conv type:DO_CONV or GENERAL
@@ -20,7 +20,7 @@ TRAIN = {
     "DATA_TYPE": "Customer",  # DATA_TYPE: VOC ,COCO or Customer
     "TRAIN_IMG_SIZE": 416,
     "AUGMENT": True,
-    "BATCH_SIZE": 1,
+    "BATCH_SIZE": 2,
     "MULTI_SCALE_TRAIN": True,
     "IOU_THRESHOLD_LOSS": 0.5,
     "YOLO_EPOCHS": 50,
