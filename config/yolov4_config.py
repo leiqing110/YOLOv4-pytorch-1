@@ -3,7 +3,8 @@
 import os.path as osp
 PROJECT_PATH = osp.abspath(osp.join(osp.dirname(__file__), '..'))
 
-DATA_PATH = osp.join(PROJECT_PATH, 'data')
+PROJECT_PATH2 = 'G:\dataset\VisDrone2019-DET'
+DATA_PATH = osp.join(PROJECT_PATH2)
 
 
 MODEL_TYPE = {
@@ -16,7 +17,7 @@ ATTENTION = {"TYPE": "NONE"}  # attention type:SEnet、CBAM or NONE
 
 # train
 TRAIN = {
-    "DATA_TYPE": "VOC",  # DATA_TYPE: VOC ,COCO or Customer
+    "DATA_TYPE": "Customer",  # DATA_TYPE: VOC ,COCO or Customer
     "TRAIN_IMG_SIZE": 416,
     "AUGMENT": True,
     "BATCH_SIZE": 1,
@@ -48,8 +49,9 @@ VAL = {
 }
 
 Customer_DATA = {
-    "NUM": 3,  # your dataset number
-    "CLASSES": ["unknown", "person", "car"],  # your dataset class
+    "NUM": 12,  # your dataset number
+    "CLASSES": ['ignored regions','pedestrian','people','bicycle','car','van','truck','tricycle','awning-tricycle','bus','motor','others'],  # your dataset class
+    # "CLASSES": ['pedestrian','people','bicycle','car','van','truck','tricycle','awning-tricycle','bus','motor'],  # your dataset class
 }
 
 VOC_DATA = {

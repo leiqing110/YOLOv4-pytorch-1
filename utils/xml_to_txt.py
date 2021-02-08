@@ -8,14 +8,14 @@ import random
 
 
 def _main():
-    xmlfilepath = "cocodata/COCO2017_train\VOCdevkit\VOC2007\Annotations/"
+    xmlfilepath = "G:/dataset/VisDrone2019-DET/Annotations_XML"
     total_xml = os.listdir(xmlfilepath)
 
     num = len(total_xml)
     list = range(num)
 
     ftrainval = open(
-        "cocodata/COCO2017_train\VOCdevkit\VOC2007/ImageSets/Main/trainval.txt",
+        "G:/dataset/VisDrone2019-DET/ImageSetsV4/trainval.txt",
         "w",
     )
 
