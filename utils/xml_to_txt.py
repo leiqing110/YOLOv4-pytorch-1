@@ -15,7 +15,7 @@ def _main():
     list = range(num)
 
     ftrainval = open(
-        "G:/dataset/VisDrone2019-DET/ImageSetsV4/trainval.txt",
+        "G:/dataset/VisDrone2019-DET/ImageSets_argusswift/trainval.txt",
         "w",
     )
 

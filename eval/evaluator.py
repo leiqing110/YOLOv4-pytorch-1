@@ -1,4 +1,6 @@
 import shutil
+import sys
+sys.path.append(".")
 from eval import voc_eval
 from utils.data_augment import *
 from utils.tools import *
@@ -22,8 +24,11 @@ class Evaluator(object):
         else:
             self.classes = cfg.Customer_DATA["CLASSES"]
         self.pred_result_path = os.path.join(cfg.PROJECT_PATH, "pred_result")
+        # self.val_data_path = os.path.join(
+        #     cfg.DATA_PATH, "VOCtest-2007", "VOCdevkit", "VOC2007"
+        # )
         self.val_data_path = os.path.join(
-            cfg.DATA_PATH, "VOCtest-2007", "VOCdevkit", "VOC2007"
+            cfg.DATA_PATH
         )
         self.conf_thresh = cfg.VAL["CONF_THRESH"]
         self.nms_thresh = cfg.VAL["NMS_THRESH"]
@@ -38,10 +43,11 @@ class Evaluator(object):
         self.final_result = defaultdict(list)
 
     def APs_voc(self):
+        # val_data_path = G:\\dataset\\VisDrone2019-DET\\VOCtest-2007\\VOCdevkit\\VOC2007\\
         img_inds_file = os.path.join(
-            self.val_data_path, "ImageSets", "Main", "test.txt"
+            self.val_data_path, "test_annotation.txt"
         )
-        with open(img_inds_file, "r") as f:
+        with open(img_inds_file, "r") as f:   
             lines = f.readlines()
             img_inds = [line.strip() for line in lines]
 
@@ -66,7 +72,10 @@ class Evaluator(object):
         return self.__calc_APs(), self.inference_time
 
     def Single_APs_voc(self, img_ind):
-        img_path = os.path.join(self.val_data_path, 'JPEGImages', img_ind + '.jpg')
+        img_ind = img_ind.split(" ")
+        # img_path = os.path.join(self.val_data_path, 'JPEGImages', img_ind + '.jpg')
+        img_ind = img_ind[0]
+        img_path = img_ind
         img = cv2.imread(img_path)
         bboxes_prd = self.get_bbox(img, self.multi_scale_test, self.flip_test)
 
@@ -226,7 +235,7 @@ class Evaluator(object):
             self.val_data_path, "Annotations\\" + "{:s}.xml"
         )
         imagesetfile = os.path.join(
-            self.val_data_path, "ImageSets", "Main", "test.txt"
+            self.val_data_path,"test_annotation.txt"
         )
         APs = {}
         Recalls = {}

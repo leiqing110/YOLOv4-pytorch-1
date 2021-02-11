@@ -4,6 +4,7 @@ import os.path as osp
 PROJECT_PATH = osp.abspath(osp.join(osp.dirname(__file__), '..'))
 
 PROJECT_PATH2 = 'G:\dataset\VisDrone2019-DET'
+PROJECT_PATH3 = 'G:\dataset'
 DATA_PATH = osp.join(PROJECT_PATH2)
 
 
@@ -20,16 +21,16 @@ TRAIN = {
     "DATA_TYPE": "Customer",  # DATA_TYPE: VOC ,COCO or Customer
     "TRAIN_IMG_SIZE": 416,
     "AUGMENT": True,
-    "BATCH_SIZE": 2,
-    "MULTI_SCALE_TRAIN": True,
+    "BATCH_SIZE": 4,
+    "MULTI_SCALE_TRAIN": False,
     "IOU_THRESHOLD_LOSS": 0.5,
-    "YOLO_EPOCHS": 50,
+    "YOLO_EPOCHS": 100,
     "Mobilenet_YOLO_EPOCHS": 120,
-    "NUMBER_WORKERS": 0,
+    "NUMBER_WORKERS": 2,
     "MOMENTUM": 0.9,
     "WEIGHT_DECAY": 0.0005,
-    "LR_INIT": 1e-4,
-    "LR_END": 1e-6,
+    "LR_INIT": 1e-3,
+    "LR_END": 1e-5,
     "WARMUP_EPOCHS": 2,  # or None
     "showatt": False
 }
@@ -38,7 +39,7 @@ TRAIN = {
 # val
 VAL = {
     "TEST_IMG_SIZE": 416,
-    "BATCH_SIZE": 1,
+    "BATCH_SIZE": 4,
     "NUMBER_WORKERS": 0,
     "CONF_THRESH": 0.005,
     "NMS_THRESH": 0.45,

@@ -15,7 +15,7 @@ from tensorboardX import SummaryWriter
 import config.yolov4_config as cfg
 from utils import cosine_lr_scheduler
 from utils.log import Logger
-from apex import amp
+# from apex import amp
 from eval_coco import *
 from eval.cocoapi_evaluator import COCOAPIEvaluator
 
@@ -57,7 +57,7 @@ class Trainer(object):
             else cfg.TRAIN["Mobilenet_YOLO_EPOCHS"]
         )
         self.eval_epoch = (
-            30 if cfg.MODEL_TYPE["TYPE"] == "YOLOv4" else 50
+            1 if cfg.MODEL_TYPE["TYPE"] == "YOLOv4" else 50
         )
         self.train_dataloader = DataLoader(
             self.train_dataset,

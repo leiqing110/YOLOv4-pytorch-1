@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("..")
+sys.path.append(".")
 import xml.etree.ElementTree as ET
 import config.yolov4_config as cfg
 import os
@@ -70,32 +70,34 @@ def parse_voc_annotation(
 if __name__ == "__main__":
     # train_set :  VOC2007_trainval 和 VOC2012_trainval
     train_data_path_2007 = os.path.join(
-        cfg.DATA_PATH, "VOCtrainval-2007", "VOCdevkit", "VOC2007"
+        cfg.DATA_PATH, "VOCdevkit", "VOC2007"
     )
     train_data_path_2012 = os.path.join(
-        cfg.DATA_PATH, "VOCtrainval-2012", "VOCdevkit", "VOC2012"
+        cfg.DATA_PATH, "VOCdevkit", "VOC2012"
     )
-    train_annotation_path = os.path.join("../data", "train_annotation.txt")
+    # 生成最终的训练标签txt文件
+    train_annotation_path = os.path.join(cfg.DATA_PATH, "train_annotation.txt")
     if os.path.exists(train_annotation_path):
         os.remove(train_annotation_path)
 
     # val_set   : VOC2007_test
     test_data_path_2007 = os.path.join(
-        cfg.DATA_PATH, "VOCtest-2007", "VOCdevkit", "VOC2007"
+        cfg.DATA_PATH, "VOCdevkit", "VOC2007"
     )
-    test_annotation_path = os.path.join("../data", "test_annotation.txt")
+    test_annotation_path = os.path.join(cfg.DATA_PATH,"test_annotation.txt")
+    
     if os.path.exists(test_annotation_path):
         os.remove(test_annotation_path)
 
     len_train = parse_voc_annotation(
         train_data_path_2007,
-        "trainval",
+        "train",
         train_annotation_path,
         use_difficult_bbox=False,
     )
     + parse_voc_annotation(
         train_data_path_2012,
-        "trainval",
+        "train",
         train_annotation_path,
         use_difficult_bbox=False,
     )
