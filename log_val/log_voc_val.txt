@@ -1,0 +1,48 @@
+[2021-02-15 10:40:38,408]-[eval_voc.py line:50]:***********Start Evaluation**************** 
+[2021-02-15 10:46:06,227]-[eval_voc.py line:58]:ignored regions --> mAP : 0 
+[2021-02-15 10:46:06,227]-[eval_voc.py line:58]:pedestrian --> mAP : 0 
+[2021-02-15 10:46:06,227]-[eval_voc.py line:58]:people --> mAP : 0 
+[2021-02-15 10:46:06,228]-[eval_voc.py line:58]:bicycle --> mAP : 0 
+[2021-02-15 10:46:06,228]-[eval_voc.py line:58]:car --> mAP : 0 
+[2021-02-15 10:46:06,228]-[eval_voc.py line:58]:van --> mAP : 0 
+[2021-02-15 10:46:06,228]-[eval_voc.py line:58]:truck --> mAP : 0 
+[2021-02-15 10:46:06,235]-[eval_voc.py line:58]:tricycle --> mAP : 0 
+[2021-02-15 10:46:06,236]-[eval_voc.py line:58]:awning-tricycle --> mAP : 0 
+[2021-02-15 10:46:06,236]-[eval_voc.py line:58]:bus --> mAP : 0 
+[2021-02-15 10:46:06,237]-[eval_voc.py line:58]:motor --> mAP : 0 
+[2021-02-15 10:46:06,237]-[eval_voc.py line:58]:others --> mAP : 0 
+[2021-02-15 10:46:06,237]-[eval_voc.py line:61]:mAP:0.0 
+[2021-02-15 10:46:06,237]-[eval_voc.py line:62]:inference time: 13643.84 ms 
+[2021-02-15 10:46:06,238]-[eval_voc.py line:64]:  ===val cost time:327.8273s 
+[2021-02-19 08:37:29,306]-[eval_voc.py line:50]:***********Start Evaluation**************** 
+[2021-02-19 08:42:58,458]-[eval_voc.py line:58]:ignored regions --> mAP : 0 
+[2021-02-19 08:42:58,458]-[eval_voc.py line:58]:pedestrian --> mAP : 0 
+[2021-02-19 08:42:58,458]-[eval_voc.py line:58]:people --> mAP : 0 
+[2021-02-19 08:42:58,458]-[eval_voc.py line:58]:bicycle --> mAP : 0 
+[2021-02-19 08:42:58,459]-[eval_voc.py line:58]:car --> mAP : 0 
+[2021-02-19 08:42:58,459]-[eval_voc.py line:58]:van --> mAP : 0 
+[2021-02-19 08:42:58,459]-[eval_voc.py line:58]:truck --> mAP : 0 
+[2021-02-19 08:42:58,459]-[eval_voc.py line:58]:tricycle --> mAP : 0 
+[2021-02-19 08:42:58,461]-[eval_voc.py line:58]:awning-tricycle --> mAP : 0 
+[2021-02-19 08:42:58,470]-[eval_voc.py line:58]:bus --> mAP : 0 
+[2021-02-19 08:42:58,486]-[eval_voc.py line:58]:motor --> mAP : 0 
+[2021-02-19 08:42:58,496]-[eval_voc.py line:58]:others --> mAP : 0 
+[2021-02-19 08:42:58,497]-[eval_voc.py line:61]:mAP:0.0 
+[2021-02-19 08:42:58,497]-[eval_voc.py line:62]:inference time: 13711.44 ms 
+[2021-02-19 08:42:58,497]-[eval_voc.py line:64]:  ===val cost time:329.1912s 
+[2021-02-19 08:45:53,926]-[eval_voc.py line:50]:***********Start Evaluation**************** 
+[2021-02-19 08:51:18,397]-[eval_voc.py line:58]:ignored regions --> mAP : 0 
+[2021-02-19 08:51:18,397]-[eval_voc.py line:58]:pedestrian --> mAP : 0 
+[2021-02-19 08:51:18,397]-[eval_voc.py line:58]:people --> mAP : 0 
+[2021-02-19 08:51:18,397]-[eval_voc.py line:58]:bicycle --> mAP : 0 
+[2021-02-19 08:51:18,398]-[eval_voc.py line:58]:car --> mAP : 0 
+[2021-02-19 08:51:18,398]-[eval_voc.py line:58]:van --> mAP : 0 
+[2021-02-19 08:51:18,398]-[eval_voc.py line:58]:truck --> mAP : 0 
+[2021-02-19 08:51:18,398]-[eval_voc.py line:58]:tricycle --> mAP : 0 
+[2021-02-19 08:51:18,406]-[eval_voc.py line:58]:awning-tricycle --> mAP : 0 
+[2021-02-19 08:51:18,407]-[eval_voc.py line:58]:bus --> mAP : 0 
+[2021-02-19 08:51:18,407]-[eval_voc.py line:58]:motor --> mAP : 0 
+[2021-02-19 08:51:18,407]-[eval_voc.py line:58]:others --> mAP : 0 
+[2021-02-19 08:51:18,408]-[eval_voc.py line:61]:mAP:0.0 
+[2021-02-19 08:51:18,408]-[eval_voc.py line:62]:inference time: 13651.04 ms 
+[2021-02-19 08:51:18,408]-[eval_voc.py line:64]:  ===val cost time:324.4823s 

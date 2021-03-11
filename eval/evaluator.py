@@ -45,7 +45,7 @@ class Evaluator(object):
     def APs_voc(self):
         # val_data_path = G:\\dataset\\VisDrone2019-DET\\VOCtest-2007\\VOCdevkit\\VOC2007\\
         img_inds_file = os.path.join(
-            self.val_data_path, "test_annotation.txt"
+            self.val_data_path,"ImageSets_argusswift","Main","val_annotation.txt"
         )
         with open(img_inds_file, "r") as f:   
             lines = f.readlines()
@@ -73,9 +73,7 @@ class Evaluator(object):
 
     def Single_APs_voc(self, img_ind):
         img_ind = img_ind.split(" ")
-        # img_path = os.path.join(self.val_data_path, 'JPEGImages', img_ind + '.jpg')
-        img_ind = img_ind[0]
-        img_path = img_ind
+        img_path = os.path.join(self.val_data_path, 'JPEGImages', img_ind[0])
         img = cv2.imread(img_path)
         bboxes_prd = self.get_bbox(img, self.multi_scale_test, self.flip_test)
 
@@ -232,10 +230,10 @@ class Evaluator(object):
         cachedir = os.path.join(self.pred_result_path, "cache")
         # annopath = os.path.join(self.val_data_path, 'Annotations', '{:s}.xml')
         annopath = os.path.join(
-            self.val_data_path, "Annotations\\" + "{:s}.xml"
+            self.val_data_path, "Annotations_XML\\" + "{:s}.xml"
         )
         imagesetfile = os.path.join(
-            self.val_data_path,"test_annotation.txt"
+            self.val_data_path,"ImageSets_argusswift","","Main","val.txt"
         )
         APs = {}
         Recalls = {}

@@ -40,7 +40,8 @@ class Evaluation(object):
 
         weight = os.path.join(weight_path)
         chkpt = torch.load(weight, map_location=self.__device)
-        self.__model.load_state_dict(chkpt["model"])
+        # self.__model.load_state_dict(chkpt["model"])
+        self.__model.load_state_dict(chkpt)
         print("loading weight file is done")
         del chkpt
 
@@ -116,7 +117,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--visiual",
         type=str,
-        default="VOCtest-2007/VOC2007/JPEGImages",
+        # default="VOCtest-2007/VOC2007/JPEGImages",
+        default=None,
         help="det data path or None",
     )
     parser.add_argument("--mode", type=str, default="val", help="val or det")

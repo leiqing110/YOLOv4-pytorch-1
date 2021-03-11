@@ -78,21 +78,21 @@ if __name__ == "__main__":
     # train_data_path_2007 = os.path.join(
     #     cfg.DATA_PATH, "VOCtrainval-2007", "VOCdevkit", "VOC2007"
     # )
-    train_annotation_path = os.path.join("G:\dataset\VisDrone2019-DET\ImageSets_argusswift\Main", "train_yolov4_final.txt")
+    train_annotation_path = os.path.join("G:\dataset\VisDrone2019-DET\ImageSets_argusswift\Main", "train_annotation.txt")
     if os.path.exists(train_annotation_path):
         os.remove(train_annotation_path)
 
     test_data_path_visdrone = os.path.join(
         cfg.DATA_PATH
     )
-    test_annotation_path = os.path.join("G:\dataset\VisDrone2019-DET\ImageSets_argusswift\Main", "test_yolov4_final.txt")
+    test_annotation_path = os.path.join("G:\dataset\VisDrone2019-DET\ImageSets_argusswift\Main", "test_annotation.txt")
     # 如果文件已经存在，删除、重新生成 
     if os.path.exists(test_annotation_path):
         os.remove(test_annotation_path)
     val_data_path_visdrone = os.path.join(
         cfg.DATA_PATH
     )
-    val_annotation_path = os.path.join("G:\dataset\VisDrone2019-DET\ImageSets_argusswift\Main", "val_yolov4_fianl.txt")
+    val_annotation_path = os.path.join("G:\dataset\VisDrone2019-DET\ImageSets_argusswift\Main", "val_annotation.txt")
     # 如果文件已经存在，删除、重新生成 
     if os.path.exists(val_annotation_path):
         os.remove(val_annotation_path)

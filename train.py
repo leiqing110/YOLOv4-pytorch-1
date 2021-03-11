@@ -57,7 +57,7 @@ class Trainer(object):
             else cfg.TRAIN["Mobilenet_YOLO_EPOCHS"]
         )
         self.eval_epoch = (
-            1 if cfg.MODEL_TYPE["TYPE"] == "YOLOv4" else 50
+            101 if cfg.MODEL_TYPE["TYPE"] == "YOLOv4" else 50
         )
         self.train_dataloader = DataLoader(
             self.train_dataset,
@@ -109,11 +109,15 @@ class Trainer(object):
     def __save_model_weights(self, epoch, mAP):
         if mAP > self.best_mAP:
             self.best_mAP = mAP
+        # best_weight = os.path.join(
+        #     os.path.split(self.weight_path)[0], "best.pt"
+        # )
+        weight_path = "weight"
         best_weight = os.path.join(
-            os.path.split(self.weight_path)[0], "best.pt"
+            weight_path, "best.pt"
         )
         last_weight = os.path.join(
-            os.path.split(self.weight_path)[0], "last.pt"
+            "weight", "last.pt"
         )
         chkpt = {
             "epoch": epoch,
@@ -130,7 +134,7 @@ class Trainer(object):
             torch.save(
                 chkpt,
                 os.path.join(
-                    os.path.split(self.weight_path)[0],
+                    weight_path,
                     "backup_epoch%g.pt" % epoch,
                 ),
             )
@@ -320,8 +324,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--weight_path",
         type=str,
-        # default="weight/mobilenetv2.pth",
-        default = None,
+        default=None,
         help="weight file path",
     )  # weight/darknet53_448.weights
     parser.add_argument(

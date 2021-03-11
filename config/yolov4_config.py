@@ -24,13 +24,13 @@ TRAIN = {
     "BATCH_SIZE": 4,
     "MULTI_SCALE_TRAIN": False,
     "IOU_THRESHOLD_LOSS": 0.5,
-    "YOLO_EPOCHS": 100,
+    "YOLO_EPOCHS": 200,
     "Mobilenet_YOLO_EPOCHS": 120,
     "NUMBER_WORKERS": 2,
     "MOMENTUM": 0.9,
     "WEIGHT_DECAY": 0.0005,
-    "LR_INIT": 1e-3,
-    "LR_END": 1e-5,
+    "LR_INIT": 1e-5,
+    "LR_END": 1e-6,
     "WARMUP_EPOCHS": 2,  # or None
     "showatt": False
 }
