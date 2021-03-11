@@ -130,7 +130,7 @@ class Trainer(object):
         if self.best_mAP == mAP:
             torch.save(chkpt["model"], best_weight)
 
-        if epoch > 0 and epoch % 10 == 0:
+        if epoch > 0 and epoch % 10 == 0:###  保存
             torch.save(
                 chkpt,
                 os.path.join(

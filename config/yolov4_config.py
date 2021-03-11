@@ -4,7 +4,6 @@ import os.path as osp
 PROJECT_PATH = osp.abspath(osp.join(osp.dirname(__file__), '..'))
 
 PROJECT_PATH2 = 'G:\dataset\VisDrone2019-DET'
-PROJECT_PATH3 = 'G:\dataset'
 DATA_PATH = osp.join(PROJECT_PATH2)
 
 
@@ -26,12 +25,12 @@ TRAIN = {
     "IOU_THRESHOLD_LOSS": 0.5,
     "YOLO_EPOCHS": 200,
     "Mobilenet_YOLO_EPOCHS": 120,
-    "NUMBER_WORKERS": 2,
+    "NUMBER_WORKERS": 4,
     "MOMENTUM": 0.9,
     "WEIGHT_DECAY": 0.0005,
-    "LR_INIT": 1e-5,
+    "LR_INIT": 1e-4,
     "LR_END": 1e-6,
-    "WARMUP_EPOCHS": 2,  # or None
+    "WARMUP_EPOCHS": 0,  # or None
     "showatt": False
 }
 
@@ -50,8 +49,8 @@ VAL = {
 }
 
 Customer_DATA = {
-    "NUM": 12,  # your dataset number
-    "CLASSES": ['ignored regions','pedestrian','people','bicycle','car','van','truck','tricycle','awning-tricycle','bus','motor','others'],  # your dataset class
+    "NUM": 10,  # your dataset number
+    "CLASSES": ['pedestrian','people','bicycle','car','van','truck','tricycle','awning-tricycle','bus','motor'],  # your dataset class
     # "CLASSES": ['pedestrian','people','bicycle','car','van','truck','tricycle','awning-tricycle','bus','motor'],  # your dataset class
 }
 
